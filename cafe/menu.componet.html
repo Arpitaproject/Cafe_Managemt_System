@@ -1,0 +1,14 @@
+<h2>कॅफे मेनू</h2>
+
+<ul>
+  <li *ngFor="let item of menu">
+    {{item.name}} - ₹{{item.price}} ({{item.category}})
+    <button (click)="deleteItem(item.id!)">काढा</button>
+  </li>
+</ul>
+
+<h3>नवीन आयटम जोडा</h3>
+<input [(ngModel)]="newItem.name" placeholder="नाव">
+<input [(ngModel)]="newItem.price" type="number" placeholder="किंमत">
+<input [(ngModel)]="newItem.category" placeholder="कॅटेगरी">
+<button (click)="addItem()">जोडा</button>
